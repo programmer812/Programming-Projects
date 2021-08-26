@@ -4,6 +4,10 @@ Project Description: Finding the day for any specific date of any year
 
 Function Paramters: find_day(month in number format, date in number format, year as a 4 digit number)
 
+Sample Input: find_day(1, 1, 2000)
+    
+Sample Output: "Saturday"
+
 """
 
 import math
@@ -57,6 +61,8 @@ def find_day(month, date, year):
   sum = century_code + quotient + remainder + fourth_number + fifth_number
   while sum > 6:
     sum -= 7
+  while sum < 0:
+    sum += 7
   
   days = {0 : "Sunday", 1 : "Monday", 2 : "Tuesday", 3 : "Wednesday", 4 : "Thursday", 5 : "Friday", 6 : "Saturday"}
   
